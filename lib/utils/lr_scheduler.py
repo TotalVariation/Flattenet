@@ -30,7 +30,7 @@ class WarmupMultiStepLR(_LRScheduler):
             **kwargs):
         if not list(milestones) == sorted(milestones):
             raise ValueError(
-                "Milestones should be a list of" 
+                "Milestones should be a list of"
                 " increasing integers. Got {}".format(milestones)
             )
 
@@ -58,14 +58,14 @@ class WarmupMultiStepLR(_LRScheduler):
 
 class WarmupPolyLR(_LRScheduler):
     def __init__(
-            self, 
-            optimizer: torch.optim.Optimizer, 
-            max_iters: int, 
-            eta_min: float = 1e-6, 
-            power: float = 0.9, 
-            warmup_factor: float = 0.001, 
-            warmup_iters: int = 1000, 
-            warmup_method: str = 'linear', 
+            self,
+            optimizer: torch.optim.Optimizer,
+            max_iters: int,
+            eta_min: float = 1e-6,
+            power: float = 0.9,
+            warmup_factor: float = 0.001,
+            warmup_iters: int = 1000,
+            warmup_method: str = 'linear',
             last_epoch: int = -1,
             **kwargs):
         self.max_iters = max_iters
@@ -81,12 +81,12 @@ class WarmupPolyLR(_LRScheduler):
             self.warmup_method, self.last_epoch, self.warmup_iters, self.warmup_factor
         )
         return [
-                self.eta_min 
+                self.eta_min
                 + (base_lr - self.eta_min)
                 * warmup_factor
                 * pow((1 - 1.0 * self.last_epoch / self.max_iters), self.power)
                 for base_lr in self.base_lrs]
-    
+
     def _compute_values(self) -> List[float]:
         # The new interface
         return self.get_lr()
@@ -135,10 +135,10 @@ class WarmupCosineLR(_LRScheduler):
 
 
 _lr_scheduler = {
-            'poly': WarmupPolyLR,
-            'cos': WarmupCosineLR,
-            'step': WarmupMultiStepLR,
-        }
+    'poly': WarmupPolyLR,
+    'cos': WarmupCosineLR,
+    'step': WarmupMultiStepLR,
+}
 
 
 def _get_warmup_factor_at_iter(
