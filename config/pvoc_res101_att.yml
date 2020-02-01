@@ -1,0 +1,76 @@
+AUTO_RESUME: False
+CUDNN:
+  BENCHMARK: True
+  DETERMINISTIC: False
+  ENABLED: True
+DATASET:
+  DATASET: 'pascal_voc'
+  NUM_CLASSES: 21
+  ROOT: '../data'
+  TEST_SET: 'val'
+  TRAIN_SET: 'train'
+DEBUG:
+  DEBUG: False
+  SAVE_BATCH_IMAGES_GT: False
+  SAVE_BATCH_IMAGES_PRED: False
+  SAVE_HEATMAPS_GT: False
+  SAVE_HEATMAPS_PRED: False
+GPUS: (0,)
+LOG_DIR: '../log'
+LOSS:
+  CLASS_BALANCE: False
+  OHEMTHRESH: 0.7
+  USE_OHEM: True
+  TYPE: 'ce'
+MODEL:
+  EXTRA:
+    EXPS1: [1, 2]
+    GROUPS1: [64, 64]
+    UPSCALE1: 4
+    DROP1: 0.05
+    POOL_SIZES1: None
+    EXPS2: [1, 1]
+    GROUPS2: [32, 64]
+    UPSCALE2: 2
+    DROP2: 0.05
+    POOL_SIZES2: None
+    BACKBONE: 'resnet'
+    NUM_LAYERS: 101
+    BASE_PRETRAINED: '../pretrained_models/imagenet/resnetv1s_101.pth'
+    DEEP_STEM: True
+    STEM_WIDTH: 64
+    AVG_DOWN: True
+  PRETRAINED: '../output/pascal_aug/paug_res101_att/best.pth'
+  NAME: 'segnet'
+OUTPUT_DIR: '../output'
+PIN_MEMORY: True
+PRINT_FREQ: 20
+RANK: 0
+TEST:
+  BASE_SIZE: 512
+  BATCH_SIZE_PER_GPU: 8
+  FLIP_TEST: True
+  IMAGE_SIZE: [512, 512]
+  MODEL_FILE: ''
+  MULTI_SCALE: True
+  NUM_SAMPLES: 0
+  SCALE_LIST: [0.5, 0.75, 1.0, 1.25, 1.5, 1.75]
+TRAIN:
+  BASE_SIZE: 512
+  BATCH_SIZE_PER_GPU: 8
+  BEGIN_EPOCH: 0
+  END_EPOCH: 50
+  FLIP: True
+  IGNORE_LABEL: -1
+  IMAGE_SIZE: [512, 512]
+  LR: 0.0001
+  LR_SCHEDULER: 'cos'
+  MOMENTUM: 0.9
+  MULTI_SCALE: True
+  NUM_SAMPLES: 0
+  OPTIMIZER: 'sgd'
+  RESUME: False
+  SCALE_FACTOR: 16
+  SHUFFLE: True
+  WD: 0.0001
+WORKERS: 4
