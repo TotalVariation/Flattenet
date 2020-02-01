@@ -91,4 +91,5 @@ limited access to computational resources. :disappointed: :disappointed: :disapp
 The code has been largely taken from [HRNet-Semantic-Segmentation ](https://github.com/HRNet/HRNet-Semantic-Segmentation/tree/pytorch-v1.1).
 
 Other References:
+
 [PyTorch-Encoding](https://github.com/zhanghang1989/PyTorch-Encoding)
