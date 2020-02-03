@@ -2,7 +2,7 @@
 
 ## Introduction
 This is a partially official pytorch implementation accompanying the publication 
-[Flattenet: A Simple and Versatile Framework for Dense Pixelwise Prediction](https://ieeexplore.ieee.org/document/8932465/metrics#metrics).
+[Flattenet: A Simple and Versatile Framework for Dense Pixelwise Prediction]( http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8932465&isnumber=8600701).
 This code repo only contains the **semantic segmentation part**. It is worth noting that 
 a number of **modifications** have been made after the paper has been published in order to 
 improve the performance. We evaluate the adapted method on PASCAL-Context and PASCAL VOC 2012.
