@@ -87,6 +87,9 @@ have any problems, feel free to open an issue.
 Moreover, I could not test our method on other datasets/benchmarks due to the 
 limited access to computational resources. :disappointed: :disappointed: :disappointed:
 
+## Note
+Due to the limited effort, this repo will not be maintained. For those interested in this work, please follow the configuration files available in the *config* folder to train your own models. The pre-trained models will no longer be available. I apologize for any inconvenience caused and thank you for your interest.
+
 ## Acknowledgement
 The code has been largely taken from [HRNet-Semantic-Segmentation ](https://github.com/HRNet/HRNet-Semantic-Segmentation/tree/pytorch-v1.1).
 
